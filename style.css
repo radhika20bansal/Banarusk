@@ -98,16 +98,15 @@
     
     .about-container .about {
         width: 50%;
+        height: 100%;
         float: left;
         padding: 15px;
-        height: 400px;
         margin-left: 20px;
-        border: 1px solid red;
     }
     
     .about-container .about h1 {
         font-size: 3.7rem;
-        margin: 50px 0 5px 0;
+        margin: 35px 0 0 0;
         text-align: center;
         font-family: 'Kaushan Script';
         letter-spacing: 2px;
@@ -120,13 +119,30 @@
         font-family: 'Acme';
     }
     
+    .about-container .about p {
+        text-align: justify;
+        margin: 12px 0;
+        font-family: cursive;
+    }
+    
+    .about-container .about a {
+        text-decoration: none;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        display: inline-block;
+        margin: 15px 20px 0px;
+        font-family: 'Kaushan Script';
+        font-weight: 600;
+        color: rgba(216, 138, 74, 0.89);
+    }
+    
     .about-container .slider {
         width: 46%;
         height: 350px;
         float: right;
         overflow: hidden;
         position: relative;
-        margin: 80px 0;
+        margin: 130px 5px 100px;
     }
     
     .about-container .slider .slides {
@@ -153,7 +169,10 @@
     }
     
     .about-container .slider .owl-dots .owl-dot span {
-        background-color: rgb(158, 84, 23);
+        background-color: rgb(197, 137, 89);
+        width: 18px;
+        height: 5px;
+        border-radius: 2px;
     }
     
     .about-container .slider .owl-dots .owl-dot span:hover {
