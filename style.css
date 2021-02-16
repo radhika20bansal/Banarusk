@@ -1,1081 +1,1083 @@
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Navigation Bar */
+
+nav {
+    width: 100%;
+    height: auto;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    position: fixed;
+    padding: 15px 25px 15px 35px;
+    transition: 0.6s;
+}
+
+nav .logo {
+    float: left;
+    color: white;
+    font-size: 1.8rem;
+    font-family: 'Niconne';
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 25px 0 0 15px;
+}
+
+nav .logo h1 span {
+    color: rgb(228, 149, 84);
+}
+
+nav .menu-list {
+    position: relative;
+    float: right;
+    padding: 10px;
+    margin: 5px 0;
+    overflow: hidden;
+}
+
+nav .menu-list .icons-list {
+    width: 33%;
+    margin-bottom: 15px;
+    margin-left: 70%;
+}
+
+.menu-list .icons-list a {
+    color: white;
+    margin-right: 20px;
+    font-size: 1rem;
+    transition: 0.6s;
+}
+
+.menu-list .icons-list a:hover,
+.menu-list ul li a:hover {
+    color: rgb(219, 154, 101);
+}
+
+nav .menu-list ul {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.menu-list ul li {
+    position: relative;
+    list-style: none;
+}
+
+.menu-list ul li a {
+    text-decoration: none;
+    display: block;
+    color: white;
+    margin: 0 22px;
+    font-size: 0.9rem;
+    font-family: cursive;
+    transition: 0.6s;
+    padding: 0 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.menu-list ul li a.active {
+    color: rgb(219, 154, 101);
+}
+
+.menu-list ul li a.active::before {
+    font-family: 'FontAwesome';
+    content: '\f111';
+    position: absolute;
+    transform: translate(-200%, 100%);
+    font-size: 0.2rem;
+    color: #fff;
+}
+
+.menu-list ul li a.active::after {
+    font-family: 'FontAwesome';
+    content: '\f111';
+    position: absolute;
+    transform: translate(100%, 120%);
+    font-size: 0.2rem;
+    color: #fff;
+}
+
+nav::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+nav.sticky {
+    padding: 5px 25px 5px 35px;
+    background-color: #fff;
+    color: black;
+}
+
+nav.sticky .logo {
+    color: black;
+    margin: 20px 0;
+}
+
+nav.sticky .menu-list .icons-list {
+    display: none;
+}
+
+nav.sticky .menu-list ul li a {
+    color: black;
+}
+
+nav.sticky .menu-list ul li a.active {
+    color: rgb(219, 154, 101);
+}
+
+nav.sticky .menu-list ul li a.active::before,
+nav.sticky .menu-list ul li a.active::after {
+    color: #000;
+}
+
+
+/* Header Section */
+
+header {
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/pexels-ray-piedra-1565982.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    animation: fade 21s infinite;
+    overflow: hidden;
+    z-index: 1;
+}
+
+@keyframes fade {
+    0% {
+        background-image: url(images/pexels-chan-walrus-941869.jpg);
+        background-size: cover;
+        background-position: center;
     }
-    /* Navigation Bar */
-    
-    nav {
-        width: 100%;
-        height: auto;
-        z-index: 100;
-        left: 0;
-        top: 0;
-        position: fixed;
-        padding: 15px 25px 15px 35px;
-        transition: 0.6s;
+    35% {
+        background-image: url(images/pexels-chan-walrus-958545.jpg);
+        background-size: cover;
+        background-position: center;
     }
-    
-    nav .logo {
-        float: left;
-        color: white;
-        font-size: 1.8rem;
-        font-family: 'Niconne';
-        font-weight: 600;
-        letter-spacing: 2px;
-        text-align: center;
-        margin: 25px 0 0 15px;
-    }
-    
-    nav .logo h1 span {
-        color: rgb(228, 149, 84);
-    }
-    
-    nav .menu-list {
-        position: relative;
-        float: right;
-        padding: 10px;
-        margin: 5px 0;
-        overflow: hidden;
-    }
-    
-    nav .menu-list .icons-list {
-        width: 33%;
-        margin-bottom: 15px;
-        margin-left: 70%;
-    }
-    
-    .menu-list .icons-list a {
-        color: white;
-        margin-right: 20px;
-        font-size: 1rem;
-        transition: 0.6s;
-    }
-    
-    .menu-list .icons-list a:hover,
-    .menu-list ul li a:hover {
-        color: rgb(219, 154, 101);
-    }
-    
-    nav .menu-list ul {
-        overflow: hidden;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 20px;
-    }
-    
-    .menu-list ul li {
-        position: relative;
-        list-style: none;
-    }
-    
-    .menu-list ul li a {
-        text-decoration: none;
-        display: block;
-        color: white;
-        margin: 0 22px;
-        font-size: 0.9rem;
-        font-family: cursive;
-        transition: 0.6s;
-        padding: 0 2px;
-        text-transform: uppercase;
-        font-weight: 600;
-    }
-    
-    .menu-list ul li a.active {
-        color: rgb(219, 154, 101);
-    }
-    
-    .menu-list ul li a.active::before {
-        font-family: 'FontAwesome';
-        content: '\f111';
-        position: absolute;
-        transform: translate(-200%, 100%);
-        font-size: 0.2rem;
-        color: #fff;
-    }
-    
-    .menu-list ul li a.active::after {
-        font-family: 'FontAwesome';
-        content: '\f111';
-        position: absolute;
-        transform: translate(100%, 120%);
-        font-size: 0.2rem;
-        color: #fff;
-    }
-    
-    nav::after {
-        content: '';
-        display: block;
-        clear: both;
-    }
-    
-    nav.sticky {
-        padding: 5px 25px 5px 35px;
-        background-color: #fff;
-        color: black;
-    }
-    
-    nav.sticky .logo {
-        color: black;
-        margin: 20px 0;
-    }
-    
-    nav.sticky .menu-list .icons-list {
-        display: none;
-    }
-    
-    nav.sticky .menu-list ul li a {
-        color: black;
-    }
-    
-    nav.sticky .menu-list ul li a.active {
-        color: rgb(219, 154, 101);
-    }
-    
-    nav.sticky .menu-list ul li a.active::before,
-    nav.sticky .menu-list ul li a.active::after {
-        color: #000;
-    }
-    /* Header Section */
-    
-    header {
-        width: 100%;
-        height: 100vh;
+    70% {
         background-image: url(images/pexels-ray-piedra-1565982.jpg);
         background-size: cover;
         background-position: center;
-        background-attachment: fixed;
-        color: white;
-        animation: fade 21s infinite;
-        overflow: hidden;
-        z-index: 1;
     }
-    
-    @keyframes fade {
-        0% {
-            background-image: url(images/pexels-chan-walrus-941869.jpg);
-            background-size: cover;
-            background-position: center;
-        }
-        35% {
-            background-image: url(images/pexels-chan-walrus-958545.jpg);
-            background-size: cover;
-            background-position: center;
-        }
-        70% {
-            background-image: url(images/pexels-ray-piedra-1565982.jpg);
-            background-size: cover;
-            background-position: center;
-        }
-        100% {
-            background-image: url(images/pexels-chan-walrus-941869.jpg);
-            background-size: cover;
-            background-position: center;
-        }
+    100% {
+        background-image: url(images/pexels-chan-walrus-941869.jpg);
+        background-size: cover;
+        background-position: center;
     }
-    
-    header .container {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.45);
-        overflow: hidden;
-    }
-    
-    header h1 {
-        margin-bottom: 15px;
-        font-size: 3.3rem;
-        letter-spacing: 2px;
-        font-family: 'Redressed';
-    }
-    
-    header h2 {
-        font-size: 2rem;
-        letter-spacing: 2px;
-        font-family: 'Tangerine';
-    }
-    
-    header h2::before,
-    header h2::after {
-        content: '';
-        display: block;
-        width: 100%;
-        height: 1px;
-        margin: 10px;
-        background-color: rgb(228, 149, 84);
-    }
-    
-    header h4 {
-        margin: 8px;
-        font-size: 1.2rem;
-        font-family: 'Dancing Script';
-        letter-spacing: 2px;
-        padding: 5px;
-    }
-    
-    header h4 i {
-        margin: 0px 8px;
-        color: rgb(228, 149, 84);
-        font-size: 1.5rem;
-        transform: skewY(12deg);
-    }
-    /*About Section AND Restaurant Section*/
-    
-    .about-container {
-        width: 95%;
-        margin: 0 auto;
-        overflow: hidden;
-    }
-    
-    .about-container::after {
-        content: '';
-        display: block;
-        clear: both;
-    }
-    
-    .about-container .about {
-        width: 50%;
-        height: 100%;
-        float: left;
-        padding: 15px;
-        margin-left: 20px;
-    }
-    
-    .about-container .about h1,
-    .restaurant-container .about h1 {
-        font-size: 3.7rem;
-        margin: 35px 0 10px 0;
-        text-align: center;
-        font-family: 'Kaushan Script';
-        letter-spacing: 2px;
-        color: rgba(216, 138, 74, 0.89);
-    }
-    
-    .about-container .about h3,
-    .restaurant-container .about h3 {
-        text-align: center;
-        font-size: 1.5rem;
-        font-family: 'Acme';
-    }
-    
-    .about-container .about p,
-    .restaurant-container .about p {
-        text-align: justify;
-        margin: 12px 0;
-        font-family: cursive;
-    }
-    
-    .about-container .about a,
-    .restaurant-container .about a {
-        text-decoration: none;
-        font-size: 1.2rem;
-        text-transform: uppercase;
-        display: inline-block;
-        margin: 15px 20px 0px;
-        padding: 5px;
-        font-family: 'Kaushan Script';
-        font-weight: 600;
-        color: rgba(216, 138, 74, 0.89);
-        transition: 0.3s;
-    }
-    
-    .about-container .about a:hover,
-    .restaurant-container .about a:hover {
-        color: black;
-    }
-    
-    .about-container .slider {
-        width: 46%;
-        height: 350px;
-        float: right;
-        overflow: hidden;
-        position: relative;
-        margin: 160px 5px 130px;
-    }
-    
-    .about-container .slider .slides,
-    .restaurant-container .slider .slides {
-        width: 100%;
-        height: 100%;
-    }
-    
-    .about-container .slider .slides img,
-    .restaurant-container .slider .slides img {
-        width: 98%;
-        height: 100%;
-        margin: 0 auto;
-    }
-    
-    .about-container .slider .owl-dots,
-    .restaurant-container .slider .owl-dots {
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 2;
-    }
-    
-    .about-container .slider .owl-dots .owl-dot,
-    .restaurant-container .slider .owl-dots .owl-dot {
-        outline: none;
-    }
-    
-    .about-container .slider .owl-dots .owl-dot span,
-    .restaurant-container .slider .owl-dots .owl-dot span {
-        background-color: rgb(197, 137, 89);
-        width: 18px;
-        height: 5px;
-        border-radius: 2px;
-    }
-    
-    .about-container .slider .owl-dots .owl-dot span:hover,
-    .restaurant-container .slider .owl-dots .owl-dot span:hover {
-        background-color: #fff;
-    }
-    /*Opening Hours Section*/
-    
-    .opening-hour {
-        width: 100%;
-        height: 720px;
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .opening-hour .video-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
-    
-    .video-container video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    
-    .opening-hour .content {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.65);
-        z-index: 1;
-        overflow: hidden;
-        display: flex;
-        justify-items: center;
-        align-items: center;
-        flex-direction: column;
-    }
-    
-    .opening-hour .content h1 {
-        color: #fff;
-        margin-top: 60px;
-        letter-spacing: 6px;
-        font-size: 2.7rem;
-        font-family: 'Ranchers';
-    }
-    
-    .opening-hour .content h2 {
-        color: rgb(218, 146, 88);
-        margin-top: 38px;
-        font-size: 2.2rem;
-        font-family: 'Dancing Script';
-        font-weight: 600;
-    }
-    
-    .opening-hour .content hr {
-        color: white;
-        width: 40%;
-        margin: 35px auto 20px;
-    }
-    
-    .opening-hour .content .timing {
-        width: 65%;
-        margin: 25px auto;
-        display: flex;
-        justify-content: space-around;
-        flex-direction: row;
-    }
-    /*.content .timing .weekdays,
+}
+
+header .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+}
+
+header h1 {
+    margin-bottom: 15px;
+    font-size: 3.3rem;
+    letter-spacing: 2px;
+    font-family: 'Redressed';
+}
+
+header h2 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    font-family: 'Tangerine';
+}
+
+header h2::before,
+header h2::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin: 10px;
+    background-color: rgb(228, 149, 84);
+}
+
+header h4 {
+    margin: 8px;
+    font-size: 1.2rem;
+    font-family: 'Dancing Script';
+    letter-spacing: 2px;
+    padding: 5px;
+}
+
+header h4 i {
+    margin: 0px 8px;
+    color: rgb(228, 149, 84);
+    font-size: 1.5rem;
+    transform: skewY(12deg);
+}
+
+
+/*About Section AND Restaurant Section*/
+
+.about-container {
+    width: 95%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.about-container::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.about-container .about {
+    width: 50%;
+    height: 100%;
+    float: left;
+    padding: 15px;
+    margin-left: 20px;
+}
+
+.about-container .about h1,
+.restaurant-container .about h1 {
+    font-size: 3.7rem;
+    margin: 35px 0 10px 0;
+    text-align: center;
+    font-family: 'Kaushan Script';
+    letter-spacing: 2px;
+    color: rgba(216, 138, 74, 0.89);
+}
+
+.about-container .about h3,
+.restaurant-container .about h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Acme';
+}
+
+.about-container .about p,
+.restaurant-container .about p {
+    text-align: justify;
+    margin: 12px 0;
+    font-family: cursive;
+}
+
+.about-container .about a,
+.restaurant-container .about a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    display: inline-block;
+    margin: 15px 20px 0px;
+    padding: 5px;
+    font-family: 'Kaushan Script';
+    font-weight: 600;
+    color: rgba(216, 138, 74, 0.89);
+    transition: 0.3s;
+}
+
+.about-container .about a:hover,
+.restaurant-container .about a:hover {
+    color: black;
+}
+
+.about-container .slider {
+    width: 46%;
+    height: 350px;
+    float: right;
+    overflow: hidden;
+    position: relative;
+    margin: 160px 5px 130px;
+}
+
+.about-container .slider .slides,
+.restaurant-container .slider .slides {
+    width: 100%;
+    height: 100%;
+}
+
+.about-container .slider .slides img,
+.restaurant-container .slider .slides img {
+    width: 98%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.about-container .slider .owl-dots,
+.restaurant-container .slider .owl-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.about-container .slider .owl-dots .owl-dot,
+.restaurant-container .slider .owl-dots .owl-dot {
+    outline: none;
+}
+
+.about-container .slider .owl-dots .owl-dot span,
+.restaurant-container .slider .owl-dots .owl-dot span {
+    background-color: rgb(197, 137, 89);
+    width: 18px;
+    height: 5px;
+    border-radius: 2px;
+}
+
+.about-container .slider .owl-dots .owl-dot span:hover,
+.restaurant-container .slider .owl-dots .owl-dot span:hover {
+    background-color: #fff;
+}
+
+
+/*Opening Hours Section*/
+
+.opening-hour {
+    width: 100%;
+    height: 720px;
+    position: relative;
+    overflow: hidden;
+}
+
+.opening-hour .video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.opening-hour .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.opening-hour .content h1 {
+    color: #fff;
+    margin-top: 60px;
+    letter-spacing: 6px;
+    font-size: 2.7rem;
+    font-family: 'Ranchers';
+}
+
+.opening-hour .content h2 {
+    color: rgb(218, 146, 88);
+    margin-top: 38px;
+    font-size: 2.2rem;
+    font-family: 'Dancing Script';
+    font-weight: 600;
+}
+
+.opening-hour .content hr {
+    color: white;
+    width: 40%;
+    margin: 35px auto 20px;
+}
+
+.opening-hour .content .timing {
+    width: 65%;
+    margin: 25px auto;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+
+/*.content .timing .weekdays,
 .weekends {
     border: 1px solid cyan;
 }*/
-    
-    .content .timing .weekdays h1,
-    .content .timing .weekends h1 {
-        margin: 15px 0;
-        letter-spacing: 3px;
-        font-size: 2.5rem;
-        text-align: center;
-    }
-    
-    .content .timing .design {
-        width: 8px;
-        height: 170px;
-        margin-top: 35px;
-        background-image: linear-gradient(to bottom, rgba(218, 146, 88), rgba(128, 83, 47));
-    }
-    /*Restaurant Container*/
-    
-    .restaurant-container {
-        width: 95%;
-        margin: 0 auto;
-        overflow: hidden;
-    }
-    
-    .restaurant-container::after {
-        content: '';
-        display: block;
-        clear: both;
-    }
-    
-    .restaurant-container .about {
-        width: 50%;
-        height: 100%;
-        float: right;
-        padding: 15px;
-        margin-left: 20px;
-    }
-    
-    .restaurant-container .slider {
-        width: 46%;
-        height: 350px;
-        float: left;
-        overflow: hidden;
-        position: relative;
-        margin: 160px 5px 130px;
-    }
-    /*Menu Section*/
-    
-    .parallax {
-        width: 100%;
-        height: 900px;
-        position: relative;
-        min-height: 900px;
-        background: transparent;
-        overflow: hidden;
-    }
-    
-    .parallax .parallax-content,
-    .parallax .testimonial {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.55);
-        z-index: 2;
-    }
-    
-    .parallax .parallax-content h1 {
-        font-size: 2.7rem;
-        color: #fff;
-        text-transform: uppercase;
-        margin-top: 60px;
-        letter-spacing: 6px;
-        font-family: 'Ranchers';
-        text-align: center;
-    }
-    
-    .parallax .parallax-content h2 {
-        color: rgb(218, 147, 88);
-        margin: 35px 0 20px;
-        font-size: 2.2rem;
-        font-family: 'Dancing Script';
-        font-weight: 600;
-        text-align: center;
-    }
-    
-    .parallax .parallax-content a {
-        width: 20%;
-        text-decoration: none;
-        display: block;
-        color: rgb(218, 147, 88);
-        transition: 0.4s;
-        text-transform: uppercase;
-        font-size: 1.2rem;
-        font-family: 'Kaushan Script';
-        font-weight: 600;
-        text-align: center;
-        margin: 20px auto;
-    }
-    
-    .parallax .parallax-content a:hover {
-        color: #fff;
-        transform: scale(1.2, 1.2);
-    }
-    
-    .parallax .parallax-content hr {
-        width: 40%;
-        margin: 20px auto;
-    }
-    
-    .parallax .parallax-content .deals {
-        width: 100%;
-        padding: 20px 60px;
-        margin-top: 30px;
-    }
-    
-    .parallax-content .deals h1 {
-        text-align: left;
-        font-size: 1.6rem;
-        margin: 10px 0px 10px 12%;
-    }
-    
-    .parallax-content .deals h2 {
-        text-align: left;
-        font-size: 1.6rem;
-        margin: 10px 0px 45px 12%;
-        position: relative;
-        color: #fff;
-    }
-    
-    .parallax-content .deals h2:last-child {
-        margin: 5px 0px 15px 12%;
-    }
-    
-    .parallax-content .deals h2 .line {
-        display: inline-block;
-        width: 45%;
-        height: 100%;
-        margin: 0 0.5%;
-        border-bottom: 1px dotted white;
-    }
-    
-    .parallax-content .deals h2 span del {
-        font-size: 0.8rem;
-        color: rgb(218, 147, 88);
-    }
-    /*Team Section*/
-    
-    .team {
-        width: 100%;
-        height: auto;
-        overflow: hidden;
-        position: relative;
-    }
-    
-    .team h1 {
-        text-align: center;
-        font-size: 3.7rem;
-        margin: 80px 0 15px 0;
-        text-align: center;
-        font-family: 'Kaushan Script';
-        letter-spacing: 2px;
-        color: rgba(199, 124, 62, 0.89);
-    }
-    
-    .team h3 {
-        text-transform: uppercase;
-        text-align: center;
-        font-family: 'Acme';
-        letter-spacing: 2px;
-        margin: 10px 0;
-    }
-    
-    .team span {
-        display: block;
-        text-align: center;
-        margin: 30px;
-    }
-    
-    .team span i {
-        color: rgba(199, 124, 62, 0.89);
-        font-size: 1.8rem;
-        margin: 0 10px;
-    }
-    
-    .team p {
-        margin: 10px auto;
-        width: 65%;
-        text-align: center;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    
-    .team .line-design,
-    .testimonial .line-design,
-    footer .middle .line-design {
-        width: 50%;
-        height: 30px;
-        margin: 25px auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: row;
-    }
-    
-    .team .line-design .line,
-    .testimonial .line-design .line,
-    footer .middle .line {
-        width: 25%;
-        height: 1px;
-        margin: 0 20px;
-        background-color: rgba(199, 124, 62, 0.89);
-    }
-    
-    .team .line-design .dot,
-    .testimonial .line-design .dot,
-    footer .middle .dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background-color: black;
-    }
-    
-    .team .team-member {
-        width: 65%;
-        margin: 15px auto 100px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-wrap: wrap;
-        overflow: hidden;
-    }
-    
-    .team .team-member .photo {
-        width: 23%;
-        height: auto;
-        overflow: hidden;
-    }
-    
-    .team .team-member .photo .image {
-        width: 160px;
-        height: 160px;
-        margin: 10px auto;
-        border-radius: 50%;
-        overflow: hidden;
-        transition: all 0.5s ease-in;
-        position: relative;
-    }
-    
-    .team-member .photo .image img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 2;
-        transition: 0.5s ease-in;
-    }
-    
-    .team-member .photo .image a {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        font-size: 1.2rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: rgba(218, 213, 213, 0.65);
-        font-family: 'Redressed';
-        transition: 0.5s ease-out;
-        text-decoration: none;
-        color: black;
-        cursor: pointer;
-        font-weight: 600;
-    }
-    
-    .team-member .photo .image:hover {
-        transform: scale(0.9, 0.9);
-    }
-    
-    .team-member .photo .image:hover img {
-        z-index: 1;
-    }
-    
-    .team-member .photo .image:hover a {
-        z-index: 2;
-    }
-    
-    .team-member .photo h2 {
-        text-align: center;
-        font-family: 'Dancing Script';
-        font-weight: 600;
-    }
-    
-    .team-member .photo h3 {
-        text-align: center;
-        font-family: 'Acme';
-        color: rgba(199, 124, 62, 0.89);
-        font-size: 0.8rem;
-        letter-spacing: 0;
-    }
-    /*Testimonial Section*/
-    
-    .parallax1 {
-        height: 800px;
-        min-height: 800px;
-    }
-    
-    .parallax .testimonial h1 {
-        font-size: 2.7rem;
-        color: #fff;
-        text-transform: uppercase;
-        margin-top: 100px;
-        letter-spacing: 6px;
-        font-family: 'Ranchers';
-        text-align: center;
-    }
-    
-    .parallax .testimonial h2 {
-        color: rgb(218, 147, 88);
-        margin: 35px 0 20px;
-        font-size: 2.2rem;
-        font-family: 'Dancing Script';
-        font-weight: 600;
-        text-align: center;
-    }
-    
-    .testimonial .line-design {
-        margin: 40px auto 25px;
-    }
-    
-    .testimonial .line-design .dot,
-    footer .middle .dot {
-        background-color: white;
-    }
-    
-    .parallax .testimonial .fa {
-        font-size: 1.5rem;
-        color: #fff;
-    }
-    
-    .parallax .testimonial .prev {
-        margin-right: 15px;
-        position: absolute;
-        left: 48%;
-        transform: translateX(-48%);
-        transition: 0.4s;
-    }
-    
-    .parallax .testimonial .next {
-        position: absolute;
-        right: 46%;
-        transform: translateX(-46%);
-        transition: 0.4s;
-    }
-    
-    .parallax .testimonial .prev:hover,
-    .parallax .testimonial .next:hover {
-        color: rgb(218, 147, 88);
-        cursor: pointer;
-    }
-    
-    .testimonial .review {
-        height: 250px;
-        width: 63%;
-        margin: 70px auto 20px;
-        overflow: hidden;
-    }
-    
-    .testimonial .review .people {
-        display: inline-block;
-        width: 100%;
-        height: 250px;
-    }
-    
-    .review .people span {
-        display: block;
-        text-align: center;
-        margin: 40px 40px 20px;
-    }
-    
-    .review .people span .fa {
-        color: rgb(218, 147, 88);
-    }
-    
-    .review .people p {
-        color: #fff;
-        text-align: center;
-        padding: 10px;
-        margin: 0 30px 20px;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    
-    .review .people h3 {
-        color: rgb(218, 147, 88);
-        font-family: 'Niconne';
-        font-weight: 600;
-        text-align: center;
-        font-size: 1.7rem;
-        letter-spacing: 2px;
-    }
-    
-    .testimonial .quote {
-        width: 65px;
-        height: 65px;
-        margin: 0px auto;
-        border-radius: 50%;
-        border: 2px solid white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: rgba(255, 255, 255, 0.3);
-    }
-    
-    .testimonial .quote .fa {
-        color: rgb(218, 147, 88);
-    }
-    /*Footer*/
-    
-    footer {
-        width: 100%;
-        height: auto;
-        overflow: hidden;
-        padding: 80px 0 0;
-        background-color: rgb(22, 21, 21);
-    }
-    
-    footer .top {
-        position: relative;
-        width: 100%;
-        height: auto;
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-    }
-    
-    footer .top .left {
-        width: 32%;
-        height: 100%;
-        text-align: center;
-        color: white;
-        padding: 10px 0;
-    }
-    
-    .top .left h1,
-    .top .right h1 {
-        text-transform: uppercase;
-        font-size: 1.4rem;
-        font-family: 'Acme';
-        letter-spacing: 2px;
-        margin: 15px 0 5px;
-    }
-    
-    .top .left .tweet {
-        overflow: hidden;
-        height: 140px;
-        margin-bottom: 5px;
-    }
-    
-    .top .left .tweet .offer {
-        display: inline-block;
-        width: 100%;
-        height: 140px;
-    }
-    
-    .top .left .tweet .offer h3 {
-        font-size: 1.5rem;
-        margin: 6px 0 4px;
-        font-family: 'Niconne';
-        letter-spacing: 2px;
-        color: rgb(218, 147, 88);
-    }
-    
-    .top .left .tweet .offer p {
-        font-family: 'Marck Script';
-        font-size: 1.2rem;
-        text-align: center;
-        margin: 10px 5px 0;
-        text-shadow: 1px 1px 2px darkgrey;
-    }
-    
-    .top .left .prev {
-        margin-right: 15px;
-        transition: 0.6s;
-        font-size: 1.3rem;
-    }
-    
-    .top .left .next {
-        margin-left: 15px;
-        transition: 0.6s;
-        font-size: 1.3rem;
-    }
-    
-    .top .left .prev:hover,
-    .top .left .next:hover {
-        color: rgb(218, 147, 88);
-        cursor: pointer;
-    }
-    
-    .top .left .icon {
-        color: rgb(218, 147, 88);
-        font-size: 1.3rem;
-    }
-    
-    footer .top .mid {
-        padding: 15px;
-        margin-top: 15px;
-        height: 140px;
-    }
-    
-    .top .mid h1 {
-        color: rgb(218, 147, 88);
-        font-family: 'Niconne';
-        font-size: 2.3rem;
-        letter-spacing: 2px;
-        text-align: center;
-    }
-    
-    .top .mid .social {
-        margin: 30px 0 0;
-    }
-    
-    .top .mid .social a {
-        text-decoration: none;
-        color: white;
-        margin-right: 35px;
-    }
-    
-    .top .mid .social a:last-child {
-        margin-right: 0;
-    }
-    
-    .top .mid .social a :hover {
-        color: rgb(218, 147, 88);
-    }
-    
-    .top .mid .social .fa {
-        font-size: 1.4rem;
-        transition: 0.6s;
-    }
-    
-    footer .top .right {
-        text-align: center;
-        color: white;
-    }
-    
-    .top .right h1 {
-        margin: 30px 0 50px;
-    }
-    
-    .top .right .input-box {
-        position: relative;
-        width: 300px;
-        height: 45px;
-    }
-    
-    .top .right .input-box input {
-        padding: 12px;
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-        border: none;
-    }
-    
-    .top .right .input-box .fa {
-        position: absolute;
-        right: 50px;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 1;
-        color: rgb(218, 147, 88);
-    }
-    
-    footer .middle {
-        width: 100%;
-        padding: 15px 0;
-    }
-    
-    footer .middle .line-design {
-        margin: 15px auto;
-    }
-    
-    footer .address-details {
-        width: 100%;
-        color: lightgray;
-        padding: 20px;
-        margin-bottom: 50px;
-    }
-    
-    footer .address-details ul {
-        width: 100%;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-    
-    footer .address-details li {
-        font-family: 'Redressed';
-        letter-spacing: 1.5px;
-        font-size: 1.1rem;
-        margin-bottom: 10px;
-    }
-    
-    footer .reserve {
-        width: 100;
-        background-color: rgba(55, 55, 56, 0.432);
-        padding: 40px 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-    
-    footer .reserve h3 {
-        color: white;
-        margin-left: 20px;
-        font-family: 'Niconne';
-        font-size: 1.4rem;
-        letter-spacing: 2px;
-        font-weight: 100;
-    }
-    
-    footer .reserve h3 span {
-        color: rgb(218, 147, 88);
-    }
-    
-    footer .reserve .backtotop {
-        overflow: hidden;
-        margin-right: 40px;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
-        border: 1px solid white;
-    }
-    
-    .reserve .backtotop h3 {
-        font-size: 1.2rem;
-        color: rgb(218, 147, 88);
-        transition: all 0.4s linear;
-    }
-    
-    .reserve .backtotop a {
-        color: rgb(218, 147, 88);
-        font-size: 2rem;
-        position: absolute;
-        transform: translate(50%, -100%);
-        opacity: 1;
-        transition: all 0.5s ease-in;
-        display: block;
-        cursor: pointer;
-        border: 1px solid white;
-    }
-    
-    .reserve .backtotop h3:hover {
-        cursor: pointer;
-        opacity: 0;
-    }
-    
-    .reserve .backtotop h3:hover a {
-        opacity: 1;
-        transform: translate(50%, 0%);
-    }
+
+.content .timing .weekdays h1,
+.content .timing .weekends h1 {
+    margin: 15px 0;
+    letter-spacing: 3px;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.content .timing .design {
+    width: 8px;
+    height: 170px;
+    margin-top: 35px;
+    background-image: linear-gradient(to bottom, rgba(218, 146, 88), rgba(128, 83, 47));
+}
+
+
+/*Restaurant Container*/
+
+.restaurant-container {
+    width: 95%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.restaurant-container::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.restaurant-container .about {
+    width: 50%;
+    height: 100%;
+    float: right;
+    padding: 15px;
+    margin-left: 20px;
+}
+
+.restaurant-container .slider {
+    width: 46%;
+    height: 350px;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    margin: 160px 5px 130px;
+}
+
+
+/*Menu Section*/
+
+.parallax {
+    width: 100%;
+    height: 900px;
+    position: relative;
+    min-height: 900px;
+    background: transparent;
+    overflow: hidden;
+}
+
+.parallax .parallax-content,
+.parallax .testimonial {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.55);
+    z-index: 2;
+}
+
+.parallax .parallax-content h1 {
+    font-size: 2.7rem;
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: 60px;
+    letter-spacing: 6px;
+    font-family: 'Ranchers';
+    text-align: center;
+}
+
+.parallax .parallax-content h2 {
+    color: rgb(218, 147, 88);
+    margin: 35px 0 20px;
+    font-size: 2.2rem;
+    font-family: 'Dancing Script';
+    font-weight: 600;
+    text-align: center;
+}
+
+.parallax .parallax-content a {
+    width: 20%;
+    text-decoration: none;
+    display: block;
+    color: rgb(218, 147, 88);
+    transition: 0.4s;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-family: 'Kaushan Script';
+    font-weight: 600;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.parallax .parallax-content a:hover {
+    color: #fff;
+    transform: scale(1.2, 1.2);
+}
+
+.parallax .parallax-content hr {
+    width: 40%;
+    margin: 20px auto;
+}
+
+.parallax .parallax-content .deals {
+    width: 100%;
+    padding: 20px 60px;
+    margin-top: 30px;
+}
+
+.parallax-content .deals h1 {
+    text-align: left;
+    font-size: 1.6rem;
+    margin: 10px 0px 10px 12%;
+}
+
+.parallax-content .deals h2 {
+    text-align: left;
+    font-size: 1.6rem;
+    margin: 10px 0px 45px 12%;
+    position: relative;
+    color: #fff;
+}
+
+.parallax-content .deals h2:last-child {
+    margin: 5px 0px 15px 12%;
+}
+
+.parallax-content .deals h2 .line {
+    display: inline-block;
+    width: 45%;
+    height: 100%;
+    margin: 0 0.5%;
+    border-bottom: 1px dotted white;
+}
+
+.parallax-content .deals h2 span del {
+    font-size: 0.8rem;
+    color: rgb(218, 147, 88);
+}
+
+
+/*Team Section*/
+
+.team {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.team h1 {
+    text-align: center;
+    font-size: 3.7rem;
+    margin: 80px 0 15px 0;
+    text-align: center;
+    font-family: 'Kaushan Script';
+    letter-spacing: 2px;
+    color: rgba(199, 124, 62, 0.89);
+}
+
+.team h3 {
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Acme';
+    letter-spacing: 2px;
+    margin: 10px 0;
+}
+
+.team span {
+    display: block;
+    text-align: center;
+    margin: 30px;
+}
+
+.team span i {
+    color: rgba(199, 124, 62, 0.89);
+    font-size: 1.8rem;
+    margin: 0 10px;
+}
+
+.team p {
+    margin: 10px auto;
+    width: 65%;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.team .line-design,
+.testimonial .line-design,
+footer .middle .line-design {
+    width: 50%;
+    height: 30px;
+    margin: 25px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.team .line-design .line,
+.testimonial .line-design .line,
+footer .middle .line {
+    width: 25%;
+    height: 1px;
+    margin: 0 20px;
+    background-color: rgba(199, 124, 62, 0.89);
+}
+
+.team .line-design .dot,
+.testimonial .line-design .dot,
+footer .middle .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.team .team-member {
+    width: 65%;
+    margin: 15px auto 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.team .team-member .photo {
+    width: 23%;
+    height: auto;
+    overflow: hidden;
+}
+
+.team .team-member .photo .image {
+    width: 160px;
+    height: 160px;
+    margin: 10px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: all 0.5s ease-in;
+    position: relative;
+}
+
+.team-member .photo .image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+    transition: 0.5s ease-in;
+}
+
+.team-member .photo .image a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(218, 213, 213, 0.65);
+    font-family: 'Redressed';
+    transition: 0.5s ease-out;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.team-member .photo .image:hover {
+    transform: scale(0.9, 0.9);
+}
+
+.team-member .photo .image:hover img {
+    z-index: 1;
+}
+
+.team-member .photo .image:hover a {
+    z-index: 2;
+}
+
+.team-member .photo h2 {
+    text-align: center;
+    font-family: 'Dancing Script';
+    font-weight: 600;
+}
+
+.team-member .photo h3 {
+    text-align: center;
+    font-family: 'Acme';
+    color: rgba(199, 124, 62, 0.89);
+    font-size: 0.8rem;
+    letter-spacing: 0;
+}
+
+
+/*Testimonial Section*/
+
+.parallax1 {
+    height: 800px;
+    min-height: 800px;
+}
+
+.parallax .testimonial h1 {
+    font-size: 2.7rem;
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: 100px;
+    letter-spacing: 6px;
+    font-family: 'Ranchers';
+    text-align: center;
+}
+
+.parallax .testimonial h2 {
+    color: rgb(218, 147, 88);
+    margin: 35px 0 20px;
+    font-size: 2.2rem;
+    font-family: 'Dancing Script';
+    font-weight: 600;
+    text-align: center;
+}
+
+.testimonial .line-design {
+    margin: 40px auto 25px;
+}
+
+.testimonial .line-design .dot,
+footer .middle .dot {
+    background-color: white;
+}
+
+.parallax .testimonial .fa {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.parallax .testimonial .prev {
+    margin-right: 15px;
+    position: absolute;
+    left: 48%;
+    transform: translateX(-48%);
+    transition: 0.4s;
+}
+
+.parallax .testimonial .next {
+    position: absolute;
+    right: 46%;
+    transform: translateX(-46%);
+    transition: 0.4s;
+}
+
+.parallax .testimonial .prev:hover,
+.parallax .testimonial .next:hover {
+    color: rgb(218, 147, 88);
+    cursor: pointer;
+}
+
+.testimonial .review {
+    height: 250px;
+    width: 63%;
+    margin: 70px auto 20px;
+    overflow: hidden;
+}
+
+.testimonial .review .people {
+    display: inline-block;
+    width: 100%;
+    height: 250px;
+}
+
+.review .people span {
+    display: block;
+    text-align: center;
+    margin: 40px 40px 20px;
+}
+
+.review .people span .fa {
+    color: rgb(218, 147, 88);
+}
+
+.review .people p {
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin: 0 30px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.review .people h3 {
+    color: rgb(218, 147, 88);
+    font-family: 'Niconne';
+    font-weight: 600;
+    text-align: center;
+    font-size: 1.7rem;
+    letter-spacing: 2px;
+}
+
+.testimonial .quote {
+    width: 65px;
+    height: 65px;
+    margin: 0px auto;
+    border-radius: 50%;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.testimonial .quote .fa {
+    color: rgb(218, 147, 88);
+}
+
+
+/*Footer*/
+
+footer {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 80px 0 0;
+    background-color: rgb(22, 21, 21);
+}
+
+footer .top {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+footer .top .left {
+    width: 32%;
+    height: 100%;
+    text-align: center;
+    color: white;
+    padding: 10px 0;
+}
+
+.top .left h1,
+.top .right h1 {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-family: 'Acme';
+    letter-spacing: 2px;
+    margin: 15px 0 5px;
+}
+
+.top .left .tweet {
+    overflow: hidden;
+    height: 140px;
+    margin-bottom: 5px;
+}
+
+.top .left .tweet .offer {
+    display: inline-block;
+    width: 100%;
+    height: 140px;
+}
+
+.top .left .tweet .offer h3 {
+    font-size: 1.5rem;
+    margin: 6px 0 4px;
+    font-family: 'Niconne';
+    letter-spacing: 2px;
+    color: rgb(218, 147, 88);
+}
+
+.top .left .tweet .offer p {
+    font-family: 'Marck Script';
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 10px 5px 0;
+    text-shadow: 1px 1px 2px darkgrey;
+}
+
+.top .left .prev {
+    margin-right: 15px;
+    transition: 0.6s;
+    font-size: 1.3rem;
+}
+
+.top .left .next {
+    margin-left: 15px;
+    transition: 0.6s;
+    font-size: 1.3rem;
+}
+
+.top .left .prev:hover,
+.top .left .next:hover {
+    color: rgb(218, 147, 88);
+    cursor: pointer;
+}
+
+.top .left .icon {
+    color: rgb(218, 147, 88);
+    font-size: 1.3rem;
+}
+
+footer .top .mid {
+    padding: 15px;
+    margin-top: 15px;
+    height: 140px;
+}
+
+.top .mid h1 {
+    color: rgb(218, 147, 88);
+    font-family: 'Niconne';
+    font-size: 2.3rem;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.top .mid .social {
+    margin: 30px 0 0;
+}
+
+.top .mid .social a {
+    text-decoration: none;
+    color: white;
+    margin-right: 35px;
+}
+
+.top .mid .social a:last-child {
+    margin-right: 0;
+}
+
+.top .mid .social a :hover {
+    color: rgb(218, 147, 88);
+}
+
+.top .mid .social .fa {
+    font-size: 1.4rem;
+    transition: 0.6s;
+}
+
+footer .top .right {
+    text-align: center;
+    color: white;
+}
+
+.top .right h1 {
+    margin: 30px 0 50px;
+}
+
+.top .right .input-box {
+    position: relative;
+    width: 300px;
+    height: 45px;
+}
+
+.top .right .input-box input {
+    padding: 12px;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    border: none;
+}
+
+.top .right .input-box .fa {
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    color: rgb(218, 147, 88);
+}
+
+footer .middle {
+    width: 100%;
+    padding: 15px 0;
+}
+
+footer .middle .line-design {
+    margin: 15px auto;
+}
+
+footer .address-details {
+    width: 100%;
+    color: lightgray;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+footer .address-details ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer .address-details li {
+    font-family: 'Redressed';
+    letter-spacing: 1.5px;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+footer .reserve {
+    width: 100;
+    background-color: rgba(55, 55, 56, 0.432);
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer .reserve h3 {
+    color: white;
+    margin-left: 20px;
+    font-family: 'Niconne';
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    font-weight: 100;
+}
+
+footer .reserve h3 span {
+    color: rgb(218, 147, 88);
+}
+
+.reserve a {
+    font-size: 1.3rem;
+    color: rgb(218, 147, 88);
+    transition: all 0.4s linear;
+    text-decoration: none;
+    font-family: 'Niconne';
+    cursor: pointer;
+    padding: 5px;
+    display: block;
+    margin-right: 40px;
+}
+
+.reserve a:hover {
+    transform: skew(5deg, 3deg);
+    box-shadow: 3px 3px 5px rgb(90, 89, 89);
+}
