@@ -186,3 +186,59 @@ nav.sticky .menu-list ul li a.active::after {
     font-size: 1.7rem;
     color: rgb(204, 131, 70);
 }
+
+
+/* Starters Menu */
+
+.starters {
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.starters h3 {
+    text-align: center;
+    font-family: 'Satisfy';
+    font-size: 1.5rem;
+    color: rgb(204, 131, 70);
+    margin: 80px auto 0;
+}
+
+.starters h1 {
+    margin: 0px auto 10px;
+    text-align: center;
+    font-family: 'Grenze Gotisch';
+    font-size: 2.7rem;
+    color: rgb(204, 131, 70);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.starters .main-items {
+    width: 100%;
+    height: auto;
+    padding: 10px 60px;
+    overflow: hidden;
+    border: 1px solid red;
+}
+
+.starters .main-items .left-item {
+    float: left;
+    width: 48.5%;
+    padding: 0 5px;
+    border: 1px solid black;
+}
+
+.starters .main-items .right-item {
+    float: right;
+    width: 48.5%;
+    padding: 0 5px;
+    border: 1px solid black;
+}
+
+.starters .main-items::after {
+    content: '';
+    display: block;
+    clear: both;
+}
