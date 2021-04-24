@@ -98,8 +98,8 @@ nav .menu-list ul {
     font-family: 'Font Awesome 5 Pro';
     content: '\f111';
     position: absolute;
-    transform: translate(-200%, 100%);
-    font-size: 0.2rem;
+    transform: translate(-200%, 140%);
+    font-size: 0.3rem;
     color: #fff;
 }
 
@@ -107,8 +107,8 @@ nav .menu-list ul {
     font-family: 'Font Awesome 5 Pro';
     content: '\f111';
     position: absolute;
-    transform: translate(100%, 120%);
-    font-size: 0.2rem;
+    transform: translate(100%, 150%);
+    font-size: 0.3rem;
     color: #fff;
 }
 
