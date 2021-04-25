@@ -155,22 +155,11 @@ nav.sticky .menu-list ul li a.active::after {
     height: 95vh;
     position: relative;
     min-height: 95vh;
-    background: transparent;
     overflow: hidden;
+    background: transparent;
 }
 
-.parallax-next {
-    width: 100%;
-    height: 75vh;
-    position: relative;
-    min-height: 75vh;
-    background: transparent;
-    overflow: hidden;
-    /* border: 1px solid blue; */
-}
-
-.parallax .color-overlay,
-.parallax-next .color-overlay {
+.parallax .color-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -184,8 +173,7 @@ nav.sticky .menu-list ul li a.active::after {
     flex-direction: column;
 }
 
-.parallax .color-overlay h1,
-.parallax-next .color-overlay h1 {
+.parallax .color-overlay h1 {
     font-size: 4.2rem;
     color: white;
     font-family: 'Redressed';
@@ -197,123 +185,160 @@ nav.sticky .menu-list ul li a.active::after {
     font-family: 'Satisfy';
     letter-spacing: 1px;
     word-spacing: 2px;
-    font-size: 1.7rem;
+    font-size: 1.9rem;
     color: rgb(204, 131, 70);
 }
 
 
-/* Starters Menu */
+/* Reservation Section */
 
-.starters {
+.reservation {
     width: 100%;
-    height: auto;
     position: relative;
     overflow: hidden;
-    margin-bottom: 50px;
 }
 
-.starters h3 {
-    text-align: center;
-    font-family: 'Satisfy';
-    font-size: 1.5rem;
-    color: rgb(204, 131, 70);
-    margin: 80px auto 0;
-}
-
-.starters h1 {
-    margin: 0px auto 10px;
-    text-align: center;
-    font-family: 'Grenze Gotisch';
-    font-size: 2.7rem;
-    color: rgb(204, 131, 70);
-    letter-spacing: 2px;
+.reservation h3,
+.reservation .details h3 {
     text-transform: uppercase;
+    text-align: center;
+    font-family: 'Acme';
+    letter-spacing: 2px;
+    margin: 80px 0 10px;
 }
 
-.starters .main-items {
-    width: 100%;
-    height: auto;
-    padding: 10px 60px;
-    overflow: hidden;
-    /* border: 1px solid red; */
-    margin: 25px 0 20px;
-}
-
-.starters .main-items .left-item {
-    float: left;
-    width: 49%;
-    /* border: 1px solid black; */
-}
-
-.starters .main-items .right-item {
-    float: right;
-    width: 49%;
-    /* border: 1px solid black; */
-}
-
-.starters .main-items::after {
-    content: '';
+.reservation span {
     display: block;
-    clear: both;
+    text-align: center;
+    margin: 30px;
 }
 
-.starters .main-items .items {
-    padding: 15px 5px;
-    position: relative;
-    height: 140px;
-}
-
-.starters .main-items .items .item-name {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.starters .main-items .items .item-name h2 {
-    padding: 0 10px 5px;
+.reservation span i {
+    color: rgba(199, 124, 62, 0.89);
+    font-size: 1.8rem;
     margin: 0 10px;
-    font-family: 'Kaushan Script';
-    font-weight: 500;
 }
 
-.starters .main-items .items .item-name h2:first-child {
-    font-weight: 600;
+.reservation p {
+    margin: 10px auto 60px;
+    width: 65%;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.starters .main-items .items hr {
-    width: 80%;
-    margin: 2px 10px 10px 15px;
-    border-top: 1px dotted black;
-}
-
-.starters .main-items .items h4 {
-    font-family: cursive;
-    font-weight: 100;
-    padding: 0 0 0 12px;
-    width: 88%;
-}
-
-.starters .line-design {
+.reservation .line-design {
     width: 50%;
     height: 30px;
-    margin: 25px auto;
+    margin: 25px auto 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.starters .line-design .line {
+.reservation .line-design .line {
     width: 25%;
     height: 1px;
     margin: 0 20px;
     background-color: rgba(199, 124, 62, 0.5);
 }
 
-.starters .line-design .dot {
+.reservation .line-design .dot {
     width: 8px;
     height: 8px;
     border-radius: 50%;
     background-color: black;
+}
+
+.reservation .notification {
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transition: all 0.4s ease-out;
+}
+
+.reservation .notification p {
+    text-align: center;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    word-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+.reservation .notification h3 {
+    font-family: 'Marck Script';
+    text-transform: capitalize;
+    margin: 15px 0;
+    font-weight: 500;
+}
+
+.reservation .notification h3 span {
+    color: rgb(204, 131, 70);
+    display: inline;
+    margin: 0;
+    font-weight: 700;
+}
+
+.reservation .details {
+    width: 100%;
+    padding: 0px 50px;
+    transition: 0.5s;
+}
+
+.reservation .details h3 {
+    margin: 10px 5px 15px;
+    text-align: justify;
+}
+
+.details .book {
+    float: left;
+    width: 48%;
+    margin-bottom: 50px;
+}
+
+.details .info {
+    float: right;
+    width: 48%;
+    margin-bottom: 50px;
+}
+
+.details form {
+    display: flex;
+    flex-direction: column;
+}
+
+.details form input,
+.details form select,
+.details form textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 5px;
+    height: 40px;
+    outline: none;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+}
+
+.details button {
+    display: block;
+    float: none;
+    clear: both;
+    padding: 10px 25px;
+    margin: 0px auto 80px;
+    font-size: 1.1rem;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: #000;
+    color: rgb(219, 154, 101);
+    font-family: 'Kaushan Script';
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    transition: 0.6s;
+    cursor: pointer;
+}
+
+.details button:hover {
+    color: #fff;
 }
 
 
