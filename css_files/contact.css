@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    user-select: none;
+}
+
+
+/* Navigation Bar */
+
+nav {
+    width: 100%;
+    height: auto;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    position: fixed;
+    padding: 15px 25px 15px 35px;
+    transition: 0.6s;
+}
+
+nav .logo {
+    float: left;
+    color: white;
+    font-size: 1.8rem;
+    font-family: 'Niconne';
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 25px 0 0 15px;
+}
+
+nav .logo h1 span {
+    color: rgb(228, 149, 84);
+}
+
+nav .menu-list {
+    position: relative;
+    float: right;
+    padding: 10px;
+    margin: 5px 0;
+    overflow: hidden;
+}
+
+nav .menu-list .icons-list {
+    width: 33%;
+    margin-bottom: 15px;
+    margin-left: 70%;
+}
+
+.menu-list .icons-list a {
+    color: white;
+    margin-right: 20px;
+    font-size: 1rem;
+    transition: 0.6s;
+}
+
+.menu-list .icons-list a:hover,
+.menu-list ul li a:hover {
+    color: rgb(219, 154, 101);
+}
+
+nav .menu-list ul {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.menu-list ul li {
+    position: relative;
+    list-style: none;
+}
+
+.menu-list ul li a {
+    text-decoration: none;
+    display: block;
+    color: white;
+    margin: 0 22px;
+    font-size: 0.9rem;
+    font-family: cursive;
+    transition: 0.6s;
+    padding: 0 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.menu-list ul li a.active {
+    color: rgb(219, 154, 101);
+}
+
+.menu-list ul li a.active::before {
+    font-family: 'Font Awesome 5 Pro';
+    content: '\f111';
+    position: absolute;
+    transform: translate(-200%, 140%);
+    font-size: 0.3rem;
+    color: #fff;
+}
+
+.menu-list ul li a.active::after {
+    font-family: 'Font Awesome 5 Pro';
+    content: '\f111';
+    position: absolute;
+    transform: translate(100%, 150%);
+    font-size: 0.3rem;
+    color: #fff;
+}
+
+nav::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+nav.sticky {
+    padding: 5px 25px 5px 35px;
+    background-color: #fff;
+    color: black;
+    box-shadow: 0 1px 6px 1px rgb(223, 220, 220);
+}
+
+nav.sticky .logo {
+    color: black;
+    margin: 20px 0;
+}
+
+nav.sticky .menu-list .icons-list {
+    display: none;
+}
+
+nav.sticky .menu-list ul li a {
+    color: black;
+}
+
+nav.sticky .menu-list ul li a.active {
+    color: rgb(219, 154, 101);
+}
+
+nav.sticky .menu-list ul li a.active::before,
+nav.sticky .menu-list ul li a.active::after {
+    color: #000;
+}
+
+
+/*Header Section*/
+
+.parallax {
+    width: 100%;
+    height: 95vh;
+    position: relative;
+    min-height: 95vh;
+    overflow: hidden;
+    background: transparent;
+}
+
+.parallax .color-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.55);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.parallax .color-overlay h1 {
+    font-size: 4.2rem;
+    color: white;
+    font-family: 'Redressed';
+    margin-bottom: 20px;
+}
+
+.parallax .color-overlay h2 {
+    color: white;
+    font-family: 'Satisfy';
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    font-size: 1.9rem;
+    color: rgb(204, 131, 70);
+}
