@@ -574,7 +574,7 @@ footer .address-details li {
     margin-bottom: 10px;
 }
 
-footer .reserve {
+footer .rights {
     width: 100;
     background-color: rgba(55, 55, 56, 0.432);
     padding: 40px 20px;
@@ -584,7 +584,7 @@ footer .reserve {
     flex-wrap: wrap;
 }
 
-footer .reserve h3 {
+footer .rights h3 {
     color: white;
     margin-left: 20px;
     font-family: 'Niconne';
@@ -593,11 +593,11 @@ footer .reserve h3 {
     font-weight: 100;
 }
 
-footer .reserve h3 span {
+footer .rights h3 span {
     color: rgb(218, 147, 88);
 }
 
-.reserve a {
+.rights a {
     font-size: 1.3rem;
     color: rgb(218, 147, 88);
     transition: all 0.4s linear;
@@ -609,7 +609,7 @@ footer .reserve h3 span {
     margin-right: 40px;
 }
 
-.reserve a:hover {
+.rights a:hover {
     transform: skew(5deg, 3deg);
     box-shadow: 3px 3px 5px rgb(90, 89, 89);
 }
