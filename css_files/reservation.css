@@ -572,7 +572,7 @@ footer .rights h3 span {
     color: rgb(218, 147, 88);
 }
 
-.rights a {
+footer .rights a {
     font-size: 1.3rem;
     color: rgb(218, 147, 88);
     transition: all 0.4s linear;
